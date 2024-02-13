@@ -804,17 +804,19 @@ body {
   box-shadow: 0px 36px 36px -9px hsla(232.5, 48%, 9.8%, 0.06);
   margin-bottom: 6.36rem;
 }
+@media (max-width: 991px) {
+  .subscribing {
+    padding: 4rem 2rem;
+    margin-top: 2rem;
+    box-shadow: 0px 0px 20px 6px hsla(232.5, 48%, 9.8%, 0.06);
+  }
+}
 @media (max-width: 768px) {
   .subscribing {
     margin-top: 5rem;
     flex-direction: column;
     gap: 5rem;
     text-align: center;
-  }
-}
-@media (max-width: 991px) {
-  .subscribing {
-    padding: 2rem 3rem;
   }
 }
 .subscribing .subscribingContent__heading {
