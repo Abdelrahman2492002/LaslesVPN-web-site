@@ -420,6 +420,11 @@ body {
 .about-stats__column:not(:nth-child(3)) {
   border-right: 2px solid #eeeff2;
 }
+@media (min-width: 992px) and (max-width: 1150px) {
+  .about-stats__column {
+    padding-left: 4rem;
+  }
+}
 @media (min-width: 768px) and (max-width: 991px) {
   .about-stats__column:not(:last-child) {
     border: none;
