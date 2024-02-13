@@ -7,14 +7,12 @@
   @media (max-width: 991px) {
     & {
       grid-template-columns: repeat(2, 1fr);
-      margin-bottom: 1rem;
       gap: 5rem 12rem;
     }
   }
 
   @media (max-width: 599px) {
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 1rem;
     gap: 5rem;
   }
 

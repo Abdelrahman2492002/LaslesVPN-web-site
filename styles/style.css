@@ -77,6 +77,7 @@ body {
   font-family: "Rubik", sans-serif;
   font-size: var(--font-size-16);
   color: var(--color-secondColor);
+  overflow-x: hidden;
 }
 
 @media (min-width: 576px) {
@@ -832,14 +833,12 @@ body {
 @media (max-width: 991px) {
   .footer {
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 1rem;
     gap: 5rem 12rem;
   }
 }
 @media (max-width: 599px) {
   .footer {
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 1rem;
     gap: 5rem;
   }
 }
