@@ -1,3 +1,5 @@
+@import "./mixins";
+
 .show {
   text-align: center;
 
@@ -12,8 +14,7 @@
   }
 
   &__down--bar {
-    display: flex;
-    align-items: center;
+    @include flex__items-center;
     height: 20.832rem;
     justify-content: space-between;
     margin-top: 3.581rem;
@@ -32,8 +33,7 @@
   .bar-icon {
     width: 19rem;
     height: 6rem;
-    display: flex;
-    align-items: center;
+    @include flex__items-center;
     justify-content: center;
 
     @media (max-width: 767px) {

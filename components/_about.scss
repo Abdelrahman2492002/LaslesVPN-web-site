@@ -1,6 +1,7 @@
+@import "./mixins";
+
 .about {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  @include twoColumns;
   align-items: center;
   gap: 10.3rem 4.76rem;
   margin-top: 8.849rem;
@@ -108,8 +109,7 @@
   }
 
   &__column {
-    display: flex;
-    align-items: center;
+    @include flex__items-center;
     gap: 3.55rem;
     padding: 3.529rem 9.05rem 7.25rem 9.1rem;
     flex: 1;

@@ -1,6 +1,7 @@
+@import "./mixins";
+
 .features {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  @include twoColumns;
   align-items: end;
   column-gap: 16.948rem;
   margin-top: 9.583rem;
@@ -40,8 +41,7 @@
     }
 
     &__feature {
-      display: flex;
-      align-items: center;
+      @include flex__items-center;
       gap: 1.08rem;
 
       & .feature-icon {

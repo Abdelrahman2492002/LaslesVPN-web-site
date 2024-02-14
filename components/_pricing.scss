@@ -1,3 +1,5 @@
+@import "./mixins";
+
 .pricing {
   text-align: center;
   margin-bottom: 20rem;
@@ -61,8 +63,7 @@
   }
 
   &__plan--feature {
-    display: flex;
-    align-items: center;
+    @include flex__items-center;
     gap: 2rem;
     margin-bottom: var(--padding-10);
 

@@ -1,3 +1,5 @@
+@import "./mixins";
+
 .testimonials {
   text-align: center;
 
@@ -46,8 +48,7 @@
   }
 
   &__header {
-    display: flex;
-    align-items: center;
+    @include flex__items-center;
     justify-content: space-between;
 
     &--data {
@@ -70,8 +71,7 @@
 }
 
 .testimonials__controls {
-  display: flex;
-  align-items: center;
+  @include flex__items-center;
   justify-content: space-between;
   margin-top: var(--padding-60);
 
@@ -102,14 +102,12 @@
   }
 
   .testimonials__nav {
-    display: flex;
-    align-items: center;
+    @include flex__items-center;
     gap: 2rem;
   }
 
   .testimonial__nav {
-    display: flex;
-    align-items: center;
+    @include flex__items-center;
     justify-content: center;
     width: 6rem;
     height: 6rem;
