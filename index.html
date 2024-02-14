@@ -23,8 +23,8 @@
     <title>LaslesVPN</title>
   </head>
   <body>
-    <div class="container">
-      <header class="header">
+    <header class="header">
+      <div class="container header-container">
         <div class="header__logo">
           <img
             class="header__logo--pic"
@@ -35,12 +35,17 @@
             Lasles<span class="header__logo--name-bold bold">VPN</span></span
           >
         </div>
-        <label for="toggle-checkbox" class="toggle-menu">
-          <span class="toggle-menu__bar"></span
-          ><span class="toggle-menu__bar"></span
-          ><span class="toggle-menu__bar"></span>
+        <input
+          type="checkbox"
+          id="hamburgar-checkbox"
+          class="hamburgar-checkbox"
+        />
+        <label for="hamburgar-checkbox" class="hamburgar-menu">
+          <span class="hamburgar-menu__bar"></span
+          ><span class="hamburgar-menu__bar"></span
+          ><span class="hamburgar-menu__bar"></span>
         </label>
-        <input type="checkbox" id="toggle-checkbox" class="toggle-checkbox" />
+
         <ul class="header__links">
           <li><a href="#about" class="header__links--link">About</a></li>
           <li>
@@ -52,13 +57,19 @@
           </li>
           <li><a href="#help" class="header__links--link">Help</a></li>
         </ul>
-
+        <label for="theme" class="theme">
+          <input type="checkbox" id="theme" class="theme__checkbox" />
+          <i class="fa-solid fa-sun theme__sun"></i>
+          <i class="fa-solid fa-moon theme__moon"></i>
+          <span class="theme__toggle"> </span>
+        </label>
         <div class="sign">
           <a class="sign__sign-in">Sign In</a>
           <a class="sign__sign-up">Sign Up</a>
         </div>
-      </header>
-
+      </div>
+    </header>
+    <div class="container">
       <section class="about" id="about">
         <div class="aboutContent">
           <h1 class="aboutContent__heading">

@@ -130,11 +130,6 @@
     &-arrow--right {
       background-color: var(--color-mainColor);
       border: 2px solid transparent;
-      &:hover {
-        background-color: var(--color-white);
-        color: var(--color-mainColor);
-        border: 2px solid var(--color-mainColor);
-      }
     }
   }
 

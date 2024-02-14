@@ -32,11 +32,11 @@ ol {
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  scroll-padding-top: 2rem;
+  scroll-padding-top: 10rem;
 
   @media (max-width: 991px) {
     & {
-      font-size: 60%;
+      font-size: 55%;
     }
   }
 }
@@ -45,6 +45,7 @@ body {
   font-family: "Rubik", sans-serif;
   font-size: var(--font-size-16);
   color: var(--color-secondColor);
+  background-color: var(--color-white);
   overflow-x: hidden;
 }
 

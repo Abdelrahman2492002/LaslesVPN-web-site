@@ -1,9 +1,19 @@
 .header {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-white);
+  position: sticky;
+  top: 0;
+  border-bottom: 0.1rem solid #f53838b1;
+  z-index: 1000;
+}
+
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: 3rem 0;
+  height: 8rem;
 }
 
 .header__logo {
@@ -18,21 +28,25 @@
   }
 
   @media (max-width: 767px) {
+    & {
+      gap: 0.5rem;
+    }
+
     &--pic {
-      width: 3rem;
-      height: 3rem;
+      width: 2.5rem;
+      height: 2.5rem;
       gap: 0.5rem;
     }
 
     &--name {
-      font-size: var(--font-size-18);
+      font-size: var(--font-size-14);
     }
   }
 }
 
-// Toggle
+// hamburgar
 
-.toggle-menu {
+.hamburgar-menu {
   width: 3rem;
   display: flex;
   flex-wrap: wrap;
@@ -47,6 +61,18 @@
     height: 0.1rem;
     background-color: var(--color-dark-blue);
     transition: var(--animation-timing);
+
+    .hamburgar-checkbox:checked + .hamburgar-menu & {
+      &:first-child {
+        transform: translateY(10px) rotate(40deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:last-child {
+        transform: translateY(-10px) rotate(-40deg);
+      }
+    }
   }
 
   &:hover &__bar,
@@ -61,11 +87,11 @@
   }
 }
 
-.toggle-checkbox {
+.hamburgar-checkbox {
   display: none;
 }
 
-.toggle-checkbox:checked + .header__links {
+.hamburgar-checkbox:checked ~ .header__links {
   opacity: 1;
   visibility: visible;
 }
@@ -73,7 +99,7 @@
 .header__links {
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: var(--color-white);
   gap: 4rem;
   transition: var(--animation-timing);
 
@@ -90,22 +116,30 @@
       flex-direction: column;
       gap: 0;
       position: absolute;
-      top: calc(100% - 2.5rem);
+      top: 100%;
+      left: 0;
       background-color: rgb(245 56 56 / 79%);
-      color: var(--color-dark-blue);
+      color: var(--color-white);
       opacity: 0;
       width: 100%;
       visibility: hidden;
 
       & li {
-        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        padding: 1.5rem 0;
+        width: 100%;
+        height: 4.4rem;
         border-bottom: 0.1rem solid var(--color-white);
         cursor: pointer;
 
+        .header__links--link {
+          width: 100%;
+        }
+
         &:hover a {
-          color: var(--color-dark-blue);
+          color: var(--color-secondColor);
           transform: translateX(-3rem);
           font-weight: var(--font-weight-bold);
         }
@@ -124,6 +158,65 @@
   }
 }
 
+.theme {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  @media (max-width: 767px) {
+    & {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-left: 1rem;
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &__moon {
+    transition: 1s;
+    transform: scale(0);
+    color: var(--color-mainColor);
+  }
+
+  &__checkbox:checked ~ &__moon {
+    transform: scale(1) rotate(360deg);
+  }
+
+  &__sun {
+    color: var(--color-dark-blue);
+    position: absolute;
+    transition: 1s;
+  }
+
+  &__checkbox:checked ~ &__sun {
+    transform: scale(0) rotate((360deg));
+  }
+
+  &__toggle {
+    position: absolute;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: rgb(235, 243, 251);
+    transition: 1s;
+    z-index: -1;
+  }
+
+  &__checkbox:checked ~ &__toggle {
+    background-color: #041033;
+    box-shadow: inset 0px 0px 4px 0px #f538388a;
+  }
+}
+
 .sign {
   display: flex;
   align-items: center;
@@ -131,8 +224,8 @@
 
   @media (max-width: 767px) {
     & {
-      margin-left: auto;
       margin-right: 1rem;
+      margin-left: auto;
       gap: 1rem;
       font-size: var(--font-size-14);
     }
@@ -140,7 +233,7 @@
 
   &__sign-in {
     font-weight: var(--font-weight-500);
-    color: var(--color-black);
+    color: var(--color-secondColor);
     transition: var(--animation-timing);
 
     &:hover {
