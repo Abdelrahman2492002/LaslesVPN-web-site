@@ -616,10 +616,9 @@ body {
   gap: var(--padding-50);
   margin-top: var(--padding-60);
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1150px) {
   .pricing__plans {
     flex-wrap: wrap;
-    gap: var(--padding-30);
   }
 }
 @media (max-width: 767px) {
